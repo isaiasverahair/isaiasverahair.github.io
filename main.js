@@ -98,36 +98,6 @@ document.querySelectorAll('.gallery-item').forEach(item => {
     observer.observe(item);
 });
 
-/* ==================== CARROSSEL DE AVALIAÇÕES (SIMPLES) ==================== */
-document.addEventListener('DOMContentLoaded', () => {
-    const carousel = document.querySelector('.testimonials-carousel');
-    
-    if (carousel && window.innerWidth < 768) {
-        let currentIndex = 0;
-        const cards = document.querySelectorAll('.testimonial-card');
-        const totalCards = cards.length;
-
-        function showCard(index) {
-            carousel.style.transform = `translateX(-${index * 100}%)`;
-        }
-
-        // Auto-rotate a cada 5 segundos
-        setInterval(() => {
-            currentIndex = (currentIndex + 1) % totalCards;
-            showCard(currentIndex);
-        }, 5000);
-
-        carousel.style.display = 'flex';
-        carousel.style.transition = 'transform 0.3s ease';
-        carousel.style.width = totalCards * 100 + '%';
-    }
-});
-
-/* ==================== ANIMAÇÃO DE FADE-IN INICIAL ==================== */
-window.addEventListener('load', () => {
-    document.body.style.opacity = '1';
-});
-
 /* ==================== RIPPLE EFFECT NOS BOTÕES ==================== */
 document.querySelectorAll('.btn-primary').forEach(button => {
     button.addEventListener('click', function(e) {
@@ -167,8 +137,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /* ==================== PRELOADER / FADE-IN DA PÁGINA ==================== */
 window.addEventListener('load', () => {
-    document.body.style.opacity = '1';
-    document.body.style.transition = 'opacity 0.3s ease';
+    requestAnimationFrame(() => {
+        document.body.style.opacity = '1';
+    });
 });
 
 /* ==================== ADICIONAR ESTILOS DINÂMICOS PARA RIPPLE ==================== */

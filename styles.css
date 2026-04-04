@@ -47,6 +47,8 @@ body {
     color: var(--color-dark);
     background-color: var(--color-white);
     overflow-x: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 /* ==================== CONTAINER ==================== */
@@ -231,7 +233,7 @@ a {
 }
 
 .hamburger.active span:nth-child(1) {
-    transform: rotate(45deg) translate(10px, 10px);
+    transform: rotate(45deg) translate(6px, 6px);
 }
 
 .hamburger.active span:nth-child(2) {
@@ -239,12 +241,13 @@ a {
 }
 
 .hamburger.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(7px, -7px);
+    transform: rotate(-45deg) translate(6px, -6px);
 }
 
 /* ==================== HERO SECTION ==================== */
 .hero {
     min-height: 100vh;
+    min-height: 100svh;
     background-image: url('./img/capa.jpg');
     background-size: cover;
     background-position: center;
@@ -278,7 +281,7 @@ a {
 
 .hero-brand {
     font-family: 'Nathalia', serif;
-    font-size: clamp(2.5rem, 8vw, 5rem);
+    font-size: clamp(3.5rem, 11.2vw, 7rem);
     font-weight: normal;
     margin-bottom: 2rem;
     color: var(--color-white);
@@ -594,7 +597,8 @@ a {
     border-radius: 15px;
     box-shadow: var(--shadow-soft);
     transition: var(--transition);
-    margin: 30px;
+    margin: 0;
+    text-align: center;
 }
 
 .testimonial-card:hover {
@@ -705,6 +709,7 @@ address p strong {
     font-family: 'Playfair Display', serif;
     font-weight: 700;
     letter-spacing: 0.5px;
+    text-align: center;
 }
 
 .footer-section p {
@@ -770,6 +775,7 @@ address p strong {
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .footer-bottom {
@@ -952,246 +958,3 @@ address p strong {
     }
 }
 
-.btn-primary {
-    background-color: var(--primary-color);
-    color: white;
-    border: none;
-    padding: 1rem 2.5rem;
-    font-size: 1.1rem;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.btn-primary:hover {
-    background-color: #c09384;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(212, 165, 148, 0.4);
-}
-
-/* About Section */
-.about-section {
-    padding: 6rem 0;
-    background-color: #fafafa;
-}
-
-.about-section h2 {
-    font-size: 2.5rem;
-    text-align: center;
-    margin-bottom: 3rem;
-    color: var(--primary-color);
-}
-
-.about-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: center;
-}
-
-.about-text p {
-    margin-bottom: 1.5rem;
-    font-size: 1.1rem;
-}
-
-.placeholder-image {
-    width: 100%;
-    height: 400px;
-    background: linear-gradient(135deg, var(--secondary-color) 0%, #fff 100%);
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Services Section */
-.services-section {
-    padding: 6rem 0;
-    background-color: var(--light-color);
-}
-
-.services-section h2 {
-    font-size: 2.5rem;
-    text-align: center;
-    margin-bottom: 3rem;
-    color: var(--primary-color);
-}
-
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-}
-
-.service-card {
-    background: white;
-    padding: 2.5rem;
-    border-radius: 15px;
-    text-align: center;
-    box-shadow: var(--shadow);
-    transition: all 0.3s ease;
-    border: 1px solid #eee;
-}
-
-.service-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-}
-
-.service-card h3 {
-    color: var(--dark-color);
-    margin-bottom: 1rem;
-    font-size: 1.4rem;
-}
-
-.service-card p {
-    color: var(--gray-color);
-    margin-bottom: 1.5rem;
-}
-
-.price {
-    display: inline-block;
-    background: var(--secondary-color);
-    color: var(--dark-color);
-    padding: 0.5rem 1.5rem;
-    border-radius: 25px;
-    font-weight: 600;
-}
-
-/* Gallery Section */
-.gallery-section {
-    padding: 6rem 0;
-    background-color: #fafafa;
-}
-
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-}
-
-/* Testimonials Section */
-.testimonials-section {
-    padding: 6rem 0;
-    background-color: var(--light-color);
-}
-
-.testimonials-section h2 {
-    font-size: 2.5rem;
-    text-align: center;
-    margin-bottom: 3rem;
-    color: var(--primary-color);
-}
-
-.testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-}
-
-.testimonial-card {
-    background: white;
-    padding: 2rem;
-    border-radius: 15px;
-    box-shadow: var(--shadow);
-    border-left: 4px solid var(--primary-color);
-}
-
-/* Contact Section */
-.contact-section {
-    padding: 6rem 0;
-    background-color: var(--light-color);
-}
-
-.contact-container {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 3rem;
-}
-
-.contact-info h3 {
-    color: var(--primary-color);
-    margin-bottom: 0.5rem;
-}
-
-.contact-info p, .contact-info li {
-    color: var(--gray-color);
-    margin-bottom: 1rem;
-}
-
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-.contact-form input,
-.contact-form select {
-    padding: 1rem;
-    border: 2px solid #eee;
-    border-radius: 10px;
-    font-size: 1rem;
-    transition: border-color 0.3s ease;
-}
-
-.contact-form input:focus,
-.contact-form select:focus {
-    outline: none;
-    border-color: var(--primary-color);
-}
-
-/* Footer */
-footer {
-    background-color: var(--dark-color);
-    color: white;
-    text-align: center;
-    padding: 2rem;
-}
-
-.social-links {
-    margin-top: 1rem;
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-}
-
-.social-link {
-    color: white;
-    text-decoration: none;
-    padding: 0.5rem 1.5rem;
-    background: var(--primary-color);
-    border-radius: 25px;
-    transition: all 0.3s ease;
-}
-
-.social-link:hover {
-    background: #c09384;
-    transform: translateY(-2px);
-}
-
-/* Smooth Scroll */
-html {
-    scroll-behavior: smooth;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    .nav-links {
-        gap: 1rem;
-        font-size: 0.9rem;
-    }
-
-    .hero h2 {
-        font-size: 2rem;
-    }
-
-    .about-content,
-    .contact-container {
-        grid-template-columns: 1fr;
-    }
-}
