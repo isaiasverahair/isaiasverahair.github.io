@@ -119,13 +119,17 @@ a {
 
 .btn-whatsapp-nav {
     display: none;
-    padding: 10px 20px;
+    width: 38px;
+    height: 38px;
+    padding: 0;
     background: var(--color-nude);
     color: var(--color-white);
-    font-weight: 600;
-    font-size: 0.9rem;
-    border-radius: 25px;
+    font-size: 1.3rem;
+    border-radius: 50%;
     transition: var(--transition);
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
 }
 
 .btn-whatsapp-nav:hover {
@@ -186,6 +190,7 @@ a {
 }
 
 .nav-links a {
+    font-family: var(--font-body);
     font-weight: 500;
     font-size: 0.95rem;
     color: var(--color-dark);
@@ -791,33 +796,42 @@ address p strong {
     font-weight: 600;
 }
 
+/* ==================== INDICADOR DE SEÇÃO (MOBILE) ==================== */
+.section-indicator {
+    display: none;
+}
+
 /* ==================== RESPONSIVIDADE MOBILE ==================== */
 @media (max-width: 768px) {
     .navbar-container {
         height: 60px;
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
     }
 
     .hamburger {
         display: flex;
+        justify-self: center;
     }
 
     .nav-links {
         position: absolute;
-        top: 60px;
+        top: 78px;
         left: 0;
         right: 0;
         flex-direction: column;
         background: var(--color-white);
-        padding: 20px;
+        padding: 0 20px;
         gap: 1rem;
         max-height: 0;
         overflow: hidden;
-        transition: max-height 0.3s ease;
+        transition: max-height 0.3s ease, padding 0.3s ease;
         box-shadow: var(--shadow-soft);
     }
 
     .nav-links.active {
         max-height: 300px;
+        padding: 20px;
     }
 
     .nav-links a::after {
@@ -825,16 +839,34 @@ address p strong {
     }
 
     .btn-whatsapp-nav {
-        display: inline-block;
+        display: inline-flex;
+        justify-self: end;
     }
 
     .logo-text {
         font-size: 1.2rem;
     }
 
+    .header {
+        padding-bottom: 18px;
+    }
+
+    .section-indicator {
+        display: block;
+        text-align: center;
+        font-family: var(--font-body);
+        font-size: 0.6rem;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: var(--color-dark);
+        line-height: 18px;
+    }
+
     .hero {
-        margin-top: 60px;
+        margin-top: 78px;
         min-height: 80vh;
+        min-height: 80svh;
     }
 
     .hero-title {

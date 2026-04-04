@@ -135,6 +135,32 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+/* ==================== SCROLL SPY (INDICADOR DE SEÇÃO) ==================== */
+(function () {
+    const sectionMap = [
+        { id: 'inicio',    label: 'Início' },
+        { id: 'servicos',  label: 'Serviços' },
+        { id: 'avaliacoes', label: 'Avaliações' },
+        { id: 'contato',   label: 'Localização' },
+        { id: 'sobre',     label: 'Sobre' },
+    ];
+
+    function updateIndicator() {
+        const indicator = document.getElementById('sectionIndicator');
+        if (!indicator) return;
+        const scrollPos = window.scrollY + 120;
+        let current = sectionMap[0];
+        for (const section of sectionMap) {
+            const el = document.getElementById(section.id);
+            if (el && el.offsetTop <= scrollPos) current = section;
+        }
+        indicator.textContent = current.label;
+    }
+
+    window.addEventListener('scroll', updateIndicator, { passive: true });
+    updateIndicator();
+})();
+
 /* ==================== PRELOADER / FADE-IN DA PÁGINA ==================== */
 window.addEventListener('load', () => {
     requestAnimationFrame(() => {
